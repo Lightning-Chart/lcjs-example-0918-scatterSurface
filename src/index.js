@@ -20,7 +20,7 @@ fetch(`${document.head.baseURI}examples/assets/0918/precalc-surface.json`)
         const lc = lightningChart()
         const chart = lc
             .Chart3D({
-                // theme: Themes.darkGold,
+                theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,,
             })
             .setTitle('3D surface chart visualized from scatter data set')
         chart.getDefaultAxisX().setTitle('KPI X')
