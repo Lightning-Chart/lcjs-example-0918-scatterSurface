@@ -1,7 +1,7 @@
 const lcjs = require('@arction/lcjs')
 const { lightningChart, Themes, PalettedFill, LUT, regularColorSteps, PointShape } = lcjs
 
-fetch(`${document.head.baseURI}examples/assets/0918/precalc-surface.json`)
+fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname}examples/assets/0918/precalc-surface.json`)
     .then((r) => r.json())
     .then((data) => {
         const {
