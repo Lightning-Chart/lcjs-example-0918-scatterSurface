@@ -17,7 +17,9 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
             dataPoints,
         } = data
 
-        const lc = lightningChart()
+        const lc = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        })
         const chart = lc
             .Chart3D({
                 theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
