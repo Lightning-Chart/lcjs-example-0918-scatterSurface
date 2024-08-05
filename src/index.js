@@ -22,7 +22,7 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
         })
         const chart = lc
             .Chart3D({
-                theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
+                theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
             })
             .setTitle('3D surface chart visualized from scatter data set')
         chart.getDefaultAxisX().setTitle('KPI X')
