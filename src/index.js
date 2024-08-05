@@ -1,4 +1,4 @@
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 const { lightningChart, Themes, PalettedFill, LUT, regularColorSteps, PointShape } = lcjs
 
 fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname}examples/assets/0918/precalc-surface.json`)
@@ -39,9 +39,9 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
                 dataOrder: 'columns',
                 columns: surfaceResolution,
                 rows: surfaceResolution,
-                start: { x: startX, z: startZ },
-                step: { x: stepX, z: stepZ },
             })
+            .setStart({ x: startX, z: startZ })
+            .setStep({ x: stepX, z: stepZ })
             .setName('Surface')
             .invalidateHeightMap(surfaceDataY)
 
