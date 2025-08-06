@@ -33,7 +33,6 @@ This example loads in a prepared data set of different data properties and displ
 
 * [3D chart]
 * [3D axis]
-* [Legend Box]
 * [Point series 3D]
 
 
@@ -58,8 +57,7 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[3D chart]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Chart3D.html
-[3D axis]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Axis3D.html
-[Legend Box]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/Chart.html#addLegendBox
-[Point series 3D]: https://lightningchart.com/js-charts/api-documentation/v7.1.0/classes/PointSeries3D.html
+[3D chart]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/Chart3D.html
+[3D axis]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/Axis3D.html
+[Point series 3D]: https://lightningchart.com/js-charts/api-documentation/v8.0.0/classes/PointSeries3D.html
 

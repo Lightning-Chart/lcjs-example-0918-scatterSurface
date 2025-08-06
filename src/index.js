@@ -1,5 +1,5 @@
 const lcjs = require('@lightningchart/lcjs')
-const { lightningChart, Themes, PalettedFill, LUT, regularColorSteps, PointShape } = lcjs
+const { lightningChart, Themes, PalettedFill, LUT, regularColorSteps, PointShape, LegendPosition } = lcjs
 
 fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname}examples/assets/0918/precalc-surface.json`)
     .then((r) => r.json())
@@ -22,6 +22,7 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
         })
         const chart = lc
             .Chart3D({
+                legend: { position: LegendPosition.RightCenter },
                 theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
             })
             .setTitle('3D surface chart visualized from scatter data set')
@@ -61,6 +62,4 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
                 }),
             )
         }
-
-        const legend = chart.addLegendBox().add(chart)
     })
