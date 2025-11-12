@@ -1,5 +1,5 @@
 const lcjs = require('@lightningchart/lcjs')
-const { lightningChart, Themes, PalettedFill, LUT, regularColorSteps, PointShape, LegendPosition } = lcjs
+const { lightningChart, Themes, SolidFill, SolidLine, PalettedFill, LUT, regularColorSteps, PointShape, LegendPosition } = lcjs
 
 fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname}examples/assets/0918/precalc-surface.json`)
     .then((r) => r.json())
@@ -45,6 +45,18 @@ fetch(`${new URL(document.head.baseURI).origin + new URL(document.head.baseURI).
             .setStep({ x: stepX, z: stepZ })
             .setName('Surface')
             .invalidateHeightMap(surfaceDataY)
+            .setContours({
+                valueSource: 'intensity',
+                levels: [
+                    {
+                        value: 0.003,
+                        strokeStyle: new SolidLine({
+                            thickness: 2,
+                            fillStyle: new SolidFill({ color: chart.getTheme().examples.badGoodColorPalette.at(-1) }),
+                        }),
+                    },
+                ],
+            })
 
         if (keyIntensity) {
             surface.invalidateIntensityValues(surfaceDataIntensity).setFillStyle(
